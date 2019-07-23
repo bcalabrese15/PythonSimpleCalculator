@@ -27,17 +27,23 @@ class division:
 		return num1 / num2
 division()
 input = input('Enter your calculation: ')
-for letter in input:
-	if "+" in input:
-		result = addition.add(int(input[:input.find('+')]), int(input[input.find('+'):])) 
-		print(str(result))
-	if "-" in input:
-		plusOne = int(input.find('-'))
-		result = subtraction.sub(int(input[:input.find('-')]), int(input[input.find('-'):plusOne])) 
-		print(str(result))
-	if "*" in input:
-		result = multiplication.mult(int(input[:input.find('*')]), int(input[input.find('*'):])) 
-		print(str(result))
-	if "/" in input:
-		result = division.div(int(input[:input.find('/')]), int(input[input.find('/'):])) 
-		print(str(result))
+strLengthIndex = 0
+temp = 0
+while strLengthIndex < len(input):
+	if(isinstance(input[strLengthIndex], int)):
+		strLengthIndex += 1
+	else:
+		if "+" in input:
+			result = addition.add(int(input[:input.find('+')]), int(input[input.find('+'):plusOne])) 
+			temp += int(result)
+		if "-" is input[strLengthIndex]:
+			plusOne = int(strLengthIndex + 2)
+			result = subtraction.sub(int(input[:input.find('-')]), int(input[input.find('-'):plusOne])) 
+			print(str(result))
+		if "*" in input:
+			result = multiplication.mult(int(input[:input.find('*')]), int(input[input.find('*'):])) 
+			print(str(result))
+		if "/" in input:
+			result = division.div(int(input[:input.find('/')]), int(input[input.find('/'):])) 
+			print(str(result))
+		strLengthIndex += 1
